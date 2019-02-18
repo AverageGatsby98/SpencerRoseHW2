@@ -5,7 +5,7 @@
     android:orientation="horizontal">
 
     <SurfaceView
-        android:id="@+id/PictureSurfaceView"
+        android:id="@+id/pictureSurfaceView"
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
         android:layout_weight="1" />
@@ -16,7 +16,7 @@
         android:orientation="vertical">
 
         <TextView
-            android:id="@+id/CurrentImageTextView"
+            android:id="@+id/currentImageTextView"
             android:layout_width="400dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
@@ -24,21 +24,21 @@
             android:text="CurrentImage" />
 
         <TextView
-            android:id="@+id/RedTextView"
+            android:id="@+id/redTextView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:text="Red" />
 
         <SeekBar
-            android:id="@+id/RedSeekBar"
+            android:id="@+id/redSeekBar"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:max="255" />
 
         <TextView
-            android:id="@+id/GreenTextView"
+            android:id="@+id/greenTextView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
@@ -46,14 +46,14 @@
             android:text="Green" />
 
         <SeekBar
-            android:id="@+id/GreenSeekBar"
+            android:id="@+id/greenSeekBar"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:max="255" />
 
         <TextView
-            android:id="@+id/BlueTextView"
+            android:id="@+id/blueTextView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
@@ -61,7 +61,7 @@
             android:text="Blue" />
 
         <SeekBar
-            android:id="@+id/BlueSeekBar"
+            android:id="@+id/blueSeekBar"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
