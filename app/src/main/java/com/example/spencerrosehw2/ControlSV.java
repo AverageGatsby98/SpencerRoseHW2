@@ -16,6 +16,12 @@ import android.view.View.OnTouchListener;
 
 public class ControlSV extends SurfaceView implements View.OnTouchListener{
     CustomRect testRec;
+    CustomRect house;
+    CustomRect trunk;
+    CustomCircle treeTop;
+    CustomRect door;
+    CustomRect ground;
+    CustomTriangle roof;
     public ControlSV(Context context) {
         super(context);
         init();
