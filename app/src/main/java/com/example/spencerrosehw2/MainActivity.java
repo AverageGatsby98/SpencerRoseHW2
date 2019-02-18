@@ -1,5 +1,6 @@
 package com.example.spencerrosehw2;
 
+import android.graphics.Canvas;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.SurfaceView;
@@ -14,7 +15,7 @@ public class MainActivity extends AppCompatActivity implements SeekBar.OnSeekBar
    SeekBar redBar = null;
    SeekBar greenBar = null;
    SeekBar blueBar = null;
-   SurfaceView drawSurface;
+   ControlSV currentView = null;
 
 
     @Override
@@ -33,14 +34,13 @@ public class MainActivity extends AppCompatActivity implements SeekBar.OnSeekBar
         blueBar = findViewById(R.id.blueSeekBar);
         blueBar.setOnSeekBarChangeListener(this);
 
-        drawSurface.setWillNotDraw(false);
 
 
     }
 
     @Override
     public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
-        if(seekBar == redBar){
+       if(seekBar == redBar){
             redText.setText("Red: " + progress);
         }
         else if(seekBar == greenBar){
@@ -65,4 +65,7 @@ public class MainActivity extends AppCompatActivity implements SeekBar.OnSeekBar
     public void onPointerCaptureChanged(boolean hasCapture) {
 
     }
+
+
+
 }
