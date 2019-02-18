@@ -9,10 +9,12 @@ import android.content.Context;
 import android.graphics.Canvas;
 import android.view.SurfaceView;
 
+
 public class ControlSV extends SurfaceView {
     public ControlSV(Context context) {
         super(context);
         setWillNotDraw(false);
+
     }
 
     @Override

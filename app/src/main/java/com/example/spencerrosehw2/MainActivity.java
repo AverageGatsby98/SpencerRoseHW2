@@ -15,7 +15,8 @@ public class MainActivity extends AppCompatActivity implements SeekBar.OnSeekBar
    SeekBar redBar = null;
    SeekBar greenBar = null;
    SeekBar blueBar = null;
-   ControlSV currentView = null;
+   SurfaceView currentView = null;
+
 
 
     @Override
@@ -33,6 +34,8 @@ public class MainActivity extends AppCompatActivity implements SeekBar.OnSeekBar
         greenBar.setOnSeekBarChangeListener(this);
         blueBar = findViewById(R.id.blueSeekBar);
         blueBar.setOnSeekBarChangeListener(this);
+
+        currentView = findViewById(R.id.pictureSurfaceView);
 
 
 
