@@ -4,7 +4,7 @@
     android:layout_height="match_parent"
     android:orientation="horizontal">
 
-    <SurfaceView
+    <com.example.spencerrosehw2.ControlSV
 
         android:id="@+id/pictureSurfaceView"
         android:layout_width="wrap_content"
@@ -29,7 +29,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="Red" />
+            android:text="Red:" />
 
         <SeekBar
             android:id="@+id/redSeekBar"
@@ -44,7 +44,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:layout_weight="1"
-            android:text="Green" />
+            android:text="Green:" />
 
         <SeekBar
             android:id="@+id/greenSeekBar"
@@ -59,7 +59,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:layout_weight="1"
-            android:text="Blue" />
+            android:text="Blue:" />
 
         <SeekBar
             android:id="@+id/blueSeekBar"
