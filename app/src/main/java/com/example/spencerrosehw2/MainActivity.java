@@ -11,6 +11,11 @@ import android.widget.TextView;
 
 import org.w3c.dom.Text;
 
+/**
+ * @author Spencer Rose
+ *
+ * This is the MainActivity class
+ */
 public class MainActivity extends AppCompatActivity  {
 
    TextView redText = null;
@@ -31,23 +36,26 @@ public class MainActivity extends AppCompatActivity  {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        //This block finds and sets all of the TextViews
         redText =  findViewById(R.id.redTextView);
         greenText = findViewById(R.id.greenTextView);
         blueText = findViewById(R.id.blueTextView);
         currentText = findViewById(R.id.currentImageTextView);
 
+        //this block finds and sets the seekBars
         redBar = findViewById(R.id.redSeekBar);
-
         greenBar = findViewById(R.id.greenSeekBar);
-
         blueBar = findViewById(R.id.blueSeekBar);
 
-
+       //this finds the surfaceview
        currentView = findViewById(R.id.pictureSurfaceView);
-
+       //I instatiate the ControlSV and pass in the current context
        control = new ControlSV(this);
-       listener = new ListenerSV(control, redBar, greenBar, blueBar, redText, greenText, blueText, currentText, currentView);
-       currentView.setOnTouchListener(listener);
+       //instantiate a ListenerSV by passing in all of my views and bars
+       listener = new ListenerSV(control, redBar, greenBar, blueBar, redText,
+               greenText, blueText, currentText, currentView);
+
+
 
 
 

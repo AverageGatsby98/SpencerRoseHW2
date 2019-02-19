@@ -4,6 +4,11 @@ import android.graphics.Canvas;
 import android.graphics.Path;
 import android.graphics.Rect;
 
+/**
+ * @author Spencer Rose
+ *
+ * This class defines a custom element that is a Triangle
+ */
 public class CustomTriangle extends CustomElement {
 
     /** the position and size of the Triangle is stored here */
