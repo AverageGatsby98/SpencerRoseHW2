@@ -26,12 +26,14 @@ public class ListenerSV implements View.OnTouchListener,
     private ControlSV control;
     private SurfaceView theView;
     private  CustomElement currentElement;
-    
-    //The constructor for my ListenerSV
+
+    //The constructor for my ListenerSV: it takes in all my views and a
+    // ControlSV
     public ListenerSV(ControlSV controller, SeekBar redBar, SeekBar greenBar,
                       SeekBar blueBar, TextView redText, TextView greenText,
                       TextView blueText, TextView currentImage,
                       SurfaceView view){
+        //I set the onChangeListener for all the seekbars to this listener class
         this.redBar = redBar;
         redBar.setOnSeekBarChangeListener(this);
         this.blueBar = blueBar;
@@ -47,10 +49,15 @@ public class ListenerSV implements View.OnTouchListener,
 
         this.control = controller;
         this.theView = view;
+        //I set the OnTouchListener for the Surface View to this class
         theView.setOnTouchListener(this);
     }
+
+    //The onTouch method used to find out what Element i am touching
     @Override
     public boolean onTouch(View v, MotionEvent event) {
+        //Set X and Y values based on the MotionEvent to be checked by each
+        //elements "contains" method
       int xPos = (int) event.getX();
       int yPos = (int) event.getY();
       int redVal =0;
@@ -58,6 +65,10 @@ public class ListenerSV implements View.OnTouchListener,
       int blueVal =0;
       int currentColor =0;
 
+      //All of these if statements check which element is being touched based
+        // on the location of the touch and then change the top textview to
+        // display the name of the Element, then get the RGB values from that
+        //element and change the seekbars to match
       if(control.door.containsPoint(xPos, yPos)) {
           currentText.setText(""+control.door.getName());
           /**
@@ -69,13 +80,16 @@ public class ListenerSV implements View.OnTouchListener,
            * Solution:  the equations you see below (color >> 16) & 0xFF
            */
           currentColor = control.door.getColor();
+          //determine RGB values
           redVal = (currentColor >> 16) & 0xFF;
           greenVal = (currentColor >> 8) & 0xFF;
           blueVal = (currentColor >> 0) & 0xFF;
+          //make seekbars match those values
           redBar.setProgress(redVal);
           greenBar.setProgress(greenVal);
           blueBar.setProgress(blueVal);
           currentElement = control.door;
+          //call invalidate to redraw the surfaceView
           theView.invalidate();
           return true;
       }
@@ -151,9 +165,12 @@ public class ListenerSV implements View.OnTouchListener,
 
     }
 
+
     @Override
     public void onProgressChanged(SeekBar seekBar, int progress,
                                   boolean fromUser) {
+        //As the user changes the seekbars I change the text views above the
+        //bars to show the user what the integer value is from 0 to 255
         if(seekBar == redBar){
             redText.setText("Red: " + progress);
         }
@@ -175,6 +192,14 @@ public class ListenerSV implements View.OnTouchListener,
     @Override
     public void onStopTrackingTouch(SeekBar seekBar) {
 
+        //when the user lets go of a seekbar i create a color based off of the
+        //values of the seekbars, set that color to the current element's color
+        //and then call invalidate to redraw the surface view
+        //NOTE: I know this does not work because it will not actually redraw
+        //the surface with the new color, but I know that it does save the
+        //"new color" of the element because its RGB seekbars will change to
+        //reflect the new color, even if you click on another element and go
+        //back to the previous element whose color you changed
         int redVal = redBar.getProgress();
         int greenVal = greenBar.getProgress();
         int blueVal = blueBar.getProgress();

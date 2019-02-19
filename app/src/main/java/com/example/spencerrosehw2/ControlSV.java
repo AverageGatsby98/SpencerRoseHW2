@@ -15,6 +15,7 @@ import android.view.View.OnTouchListener;
 
 public class ControlSV extends SurfaceView{
 
+    //Here I instatiate each of the 6 elements that are drawn on the SurfaceView
     CustomRect house = new CustomRect("house", 0xFF8B4513, 50,
             300, 650, 700);
     CustomRect trunk = new CustomRect("trunk", 0xFF8B4513, 1000,
@@ -27,6 +28,8 @@ public class ControlSV extends SurfaceView{
             700, 1250, 950);
     CustomTriangle roof = new CustomTriangle("roof", 0xFFFF0000,
             50, 300, 350, 150, 650, 300);
+
+    //These are the three required constructors
     public ControlSV(Context context) {
         super(context);
         init();
@@ -42,6 +45,8 @@ public class ControlSV extends SurfaceView{
         init();
     }
 
+    //an initialize method that makes sure you can actually draw on the
+    //SurfaceView
     private void init(){
         setWillNotDraw(false);
 
@@ -51,6 +56,7 @@ public class ControlSV extends SurfaceView{
     @Override
     protected void onDraw(Canvas canvas){
 
+        //I set the canvas to white and then draw each of the elements on it
         canvas.drawColor(0xFFFFFFFF);
         roof.drawMe(canvas);
         house.drawMe(canvas);

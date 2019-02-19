@@ -7,11 +7,13 @@ import android.graphics.Rect;
 /**
  * @author Spencer Rose
  *
- * This class defines a custom element that is a Triangle
+ * This class defines a custom element that is a Triangle (used for the roof of
+ * the house)
  */
 public class CustomTriangle extends CustomElement {
 
     /** the position and size of the Triangle is stored here */
+    //Each of these ints represents a vertex of the triangle (x1, y1) ...etc
     int x1;
     int x2;
     int x3;
@@ -19,9 +21,11 @@ public class CustomTriangle extends CustomElement {
     int y2;
     int y3;
 
+    //ints I will use to return the size of the triangle
     int base;
     int height;
     int ROOF_OFFSET =150;
+
     /** the Triangle's dimensions must be defined at construction */
     public CustomTriangle(String name, int color,
                       int p1x, int p1y, int p2x, int p2y, int p3x, int p3y)
@@ -46,6 +50,8 @@ public class CustomTriangle extends CustomElement {
          * triangle-shape
          * Solution:  Using the "path" object
          */
+        //I create a path for the triangle based on inputted points then close
+        //it to draw
         Path trianglePath = new Path();
         trianglePath.moveTo(x1, y1);
         trianglePath.lineTo(x2,y2);
@@ -57,6 +63,10 @@ public class CustomTriangle extends CustomElement {
 
     @Override
     public boolean containsPoint(int x, int y) {
+        //I determine if the user is clicking on the triangle based on if they
+        //click within and invisible rectangle around the triangle whose height
+        //is the height of the triangle and whose with is the width of the
+        //triangle
         int left = x1;
         int top =y1-ROOF_OFFSET ;
         int right = x3;
@@ -66,6 +76,7 @@ public class CustomTriangle extends CustomElement {
         return r.contains(x, y);
     }
 
+    //this method returns the size of the triangle based on 1/2 base * height
     @Override
     public int getSize() {
         return (int).5*base*height;
@@ -74,6 +85,8 @@ public class CustomTriangle extends CustomElement {
     @Override
     public void drawHighlight(Canvas canvas) {
 
+        //to draw the highlight of the triangle I redraw the triangle but using
+        //the CustomElement highlight paint/method
         Path trianglePath = new Path();
         trianglePath.moveTo(x1, y1);
         trianglePath.lineTo(x2,y2);
