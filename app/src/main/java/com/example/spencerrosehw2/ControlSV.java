@@ -15,13 +15,13 @@ import android.view.View.OnTouchListener;
 
 
 public class ControlSV extends SurfaceView implements View.OnTouchListener{
-    CustomRect testRec;
-    CustomRect house;
-    CustomRect trunk;
-    CustomCircle treeTop;
-    CustomRect door;
-    CustomRect ground;
-    CustomTriangle roof;
+
+    CustomRect house = new CustomRect("house", 0xFF8B4513, 50, 300, 650, 700);
+    CustomRect trunk = new CustomRect("trunk", 0xFF8B4513, 1000, 400, 1050, 700);
+    CustomCircle treeTop = new CustomCircle("tree top",0xFF00FF00, 1025, 300, 100 );
+    CustomRect door = new CustomRect("door", 0xFF000000, 250, 400, 450, 700);
+    CustomRect ground = new CustomRect("ground", 0xFF00FF00, 0, 700, 1250, 950);
+    CustomTriangle roof = new CustomTriangle("roof", 0xFFFF0000, 50, 300, 350, 150, 650, 300);
     public ControlSV(Context context) {
         super(context);
         init();
@@ -47,18 +47,21 @@ public class ControlSV extends SurfaceView implements View.OnTouchListener{
     protected void onDraw(Canvas canvas){
 
         canvas.drawColor(0xFFFFFFFF);
-        testRec = new CustomRect("test", 0xFF102289, 10, 10, 50, 50);
-        testRec.drawMe(canvas);
-        testRec.drawHighlight(canvas);
+        roof.drawMe(canvas);
+        house.drawMe(canvas);
+        door.drawMe(canvas);
+        ground.drawMe(canvas);
+        trunk.drawMe(canvas);
+        treeTop.drawMe(canvas);
+
+
 
     }
 
     @Override
     public boolean onTouch(View v, MotionEvent event) {
 
-            if(testRec.containsPoint((int)event.getX(), (int)event.getY())){
-               // currentText.setText(""+testRec.getName());//how do I set the text view??
-            }
+
 
 
 
