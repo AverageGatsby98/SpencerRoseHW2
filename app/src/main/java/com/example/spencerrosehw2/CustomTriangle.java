@@ -16,6 +16,7 @@ public class CustomTriangle extends CustomElement {
 
     int base;
     int height;
+    int ROOF_OFFSET =150;
     /** the Triangle's dimensions must be defined at construction */
     public CustomTriangle(String name, int color,
                       int p1x, int p1y, int p2x, int p2y, int p3x, int p3y)
@@ -36,7 +37,8 @@ public class CustomTriangle extends CustomElement {
          * External Citation
          * Date:     18 February 2019
          * Problem:  How to draw a triangle in android studio
-         * Resource: https://stackoverflow.com/questions/25511277/drawing-a-triangle-shape
+         * Resource: https://stackoverflow.com/questions/25511277/drawing-a-
+         * triangle-shape
          * Solution:  Using the "path" object
          */
         Path trianglePath = new Path();
@@ -51,7 +53,7 @@ public class CustomTriangle extends CustomElement {
     @Override
     public boolean containsPoint(int x, int y) {
         int left = x1;
-        int top =y1 ;
+        int top =y1-ROOF_OFFSET ;
         int right = x3;
         int bottom = y3;
         Rect r = new Rect(left, top, right, bottom);
