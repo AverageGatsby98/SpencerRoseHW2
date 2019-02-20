@@ -6,7 +6,7 @@ import android.graphics.Rect;
 
 /**
  * @author Spencer Rose
- * @version Spring 2019
+ * @version Spring 2019 (2/19/2019)
  * @see CustomElement
  *
  * This class defines a custom element that is a Triangle (used for the roof of

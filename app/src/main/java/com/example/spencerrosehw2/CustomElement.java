@@ -13,7 +13,7 @@ import android.graphics.Paint;
  * certain methods and variables to work with this app.
  * 
  * @author Andrew Nuxoll
- * @version Spring 2015
+ * @version Spring 2015 (2/19/2019)
  * 
  */
 public abstract class CustomElement {

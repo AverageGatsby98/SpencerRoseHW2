@@ -11,7 +11,7 @@ import android.graphics.Rect;
  * This class defines a custom drawing element that is a circle.
  * 
  * @author Andrew Nuxoll
- * @version Spring 2015
+ * @version Spring 2015 (2/19/2019)
  * @see CustomElement
  *
  */
