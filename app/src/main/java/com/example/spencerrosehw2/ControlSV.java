@@ -10,6 +10,7 @@ import android.view.View.OnTouchListener;
 
 /**
  * @author Spencer Rose
+ * @version Spring 2019
  * This class is the control for my surface view and handles the onDraw method
  */
 

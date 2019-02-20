@@ -13,7 +13,7 @@ import org.w3c.dom.Text;
 
 /**
  * @author Spencer Rose
- *
+ *@version Spring 2019
  * This is the MainActivity class
  */
 public class MainActivity extends AppCompatActivity  {

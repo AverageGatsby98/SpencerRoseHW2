@@ -9,7 +9,7 @@ import android.widget.TextView;
 
 /**
  * @author Spencer Rose
- *
+ *@version Spring 2019
  * This class acts as the listener for the seekBars and the SurfaceView OnTouch
  */
 public class ListenerSV implements View.OnTouchListener,
